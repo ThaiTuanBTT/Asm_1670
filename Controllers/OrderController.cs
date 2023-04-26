@@ -66,7 +66,7 @@ namespace FPTBook.Controllers
         //[Authorize(Roles = "BookOwner")]
         public IActionResult Cancel(int id)
         {
-            TempData["cancel"] = "Order has been cancelled ";
+            TempData["cancel"] = "Order has been cancelled---";
             var order = context.Orders.Find(id);
             context.Orders.Where(x => x.Id == id).First().Status = 0;
             context.SaveChanges();
