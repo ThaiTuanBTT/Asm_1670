@@ -54,7 +54,7 @@ namespace FPTBook.Controllers
         //[Authorize(Roles = "Customer")]
         public IActionResult Approve(int id, int quantity, int bookId)
         {
-            TempData["approve"] = "Order has been approved";
+            TempData["approve"] = "Order has been approved---";
             var order = context.Orders.Find(id);
             var name = context.Orders.Where(x=>x.Id == id).First().OrderName;
             context.Books.Where(x => x.Title == name).First().Quantity -= quantity;
